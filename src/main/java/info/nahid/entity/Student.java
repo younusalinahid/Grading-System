@@ -14,6 +14,10 @@ public class Student {
     @JoinColumn(name = "department_id")
     private Department department;
 
+    @ManyToOne
+    @JoinColumn(name = "semester_id")
+    private Semester semester;
+
     public Student() {
 
     }
@@ -48,6 +52,14 @@ public class Student {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public Semester getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semester semester) {
+        this.semester = semester;
     }
 
     @Override
