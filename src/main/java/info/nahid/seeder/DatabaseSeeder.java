@@ -1,6 +1,5 @@
 package info.nahid.seeder;
 
-import info.nahid.dto.StudentDto;
 import info.nahid.entity.Department;
 import info.nahid.entity.Semester;
 import info.nahid.entity.Student;
@@ -15,6 +14,8 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 @Component
@@ -90,20 +91,45 @@ public class DatabaseSeeder {
         student1.setId(10001L);
         student1.setName("Naimul Islam");
         student1.setRollNumber(01);
-        student1.setDepartment(department1);
+        student1.setGender("Male");
         student1.setSemester(semester1);
+        student1.setDepartment(department1);
+        student1.setCompletedBachelor(true);
         students.add(student1);
+
+        Student student3 = new Student();
+        student3.setId(10003L);
+        student3.setName("Md Khaled");
+        student3.setRollNumber(03);
+        student3.setCompletedBachelor(false);
+        student3.setGender("Male");
+        student3.setSemester(semester1);
+        student3.setDepartment(department1);
+        students.add(student3);
+
+        Student student4 = new Student();
+        student4.setId(10002L);
+        student4.setName("Md Khaled");
+        student4.setRollNumber(02);
+        student4.setCompletedBachelor(true);
+        student4.setSemester(semester1);
+        student4.setGender("Male");
+        student4.setDepartment(department1);
+        students.add(student4);
 
         Department department2 = departmentRepository.findById(20002L).orElse(null);
         Semester semester2 = semesterRepository.findById(40002L).orElse(null);
         Student student2 = new Student();
-        student2.setId(10002L);
+        student2.setId(10004L);
         student2.setName("Rasedul hok");
-        student2.setRollNumber(02);
+        student2.setRollNumber(01);
+        student2.setGender("Male");
         student2.setDepartment(department2);
         student2.setSemester(semester2);
         students.add(student2);
+        student2.setCompletedBachelor(false);
         studentRepository.saveAll(students);
+
     }
 
 }

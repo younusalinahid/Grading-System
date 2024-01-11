@@ -1,5 +1,4 @@
 package info.nahid.entity;
-
 import javax.persistence.*;
 
 @Entity
@@ -7,8 +6,10 @@ public class Student {
     @Id
     private Long id;
     private String name;
-    @Column(unique = true)
     private int rollNumber;
+    private boolean completedBachelor;
+
+    private String gender;
 
     @ManyToOne
     @JoinColumn(name = "department_id")
@@ -60,6 +61,22 @@ public class Student {
 
     public void setSemester(Semester semester) {
         this.semester = semester;
+    }
+
+    public boolean isCompletedBachelor() {
+        return completedBachelor;
+    }
+
+    public void setCompletedBachelor(boolean completedBachelor) {
+        this.completedBachelor = completedBachelor;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     @Override
