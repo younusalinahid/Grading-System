@@ -18,7 +18,6 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "semester_id")
     private Semester semester;
-
     public Student() {
 
     }

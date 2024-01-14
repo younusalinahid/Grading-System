@@ -1,17 +1,17 @@
 package info.nahid.service;
 
+import info.nahid.dto.ResultDTo;
 import info.nahid.dto.StudentInfoDto;
-import info.nahid.entity.Department;
-import info.nahid.entity.Semester;
+import info.nahid.entity.Result;
 import info.nahid.entity.Student;
 import info.nahid.repository.DepartmentRepository;
+import info.nahid.repository.ResultRepository;
 import info.nahid.repository.SemesterRepository;
 import info.nahid.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,6 +26,9 @@ public class StudentService {
     @Autowired
     SemesterRepository semesterRepository;
 
+   @Autowired
+   ResultRepository resultRepository;
+
     public List<Student> getStudentsByDepartmentAndSemester() {
         //Department department = new Department();
         //department.setId(departmentId);
@@ -34,7 +37,7 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-   public List<StudentInfoDto> getAllStudentsInfo() {
+    public List<StudentInfoDto> getAllStudentsInfo() {
         List<Student> students = studentRepository.findAll();
         return students.stream()
                 .map(this::convertToDto)
@@ -51,4 +54,24 @@ public class StudentService {
         dto.setCompletedBachelor(student.isCompletedBachelor());
         return dto;
     }
+
+    public List<ResultDTo> getStudentResults() {
+        List<Result> results = resultRepository.findAll();
+        return results.stream()
+                .map(this::mapToResultDTo)
+                .collect(Collectors.toList());
+    }
+
+    private ResultDTo mapToResultDTo(Result result) {
+        ResultDTo resultDTo = new ResultDTo();
+        resultDTo.setId(result.getId());
+        resultDTo.setMarks(result.getMarks());
+        resultDTo.setGrade(result.getGrade());
+        resultDTo.setGPA(result.getGPA());
+        resultDTo.setSemester(result.getSemester().getName());
+        resultDTo.setSubject(result.getSubject().getName());
+        resultDTo.setStudent(result.getStudent().getName());
+        return resultDTo;
+    }
+
 }

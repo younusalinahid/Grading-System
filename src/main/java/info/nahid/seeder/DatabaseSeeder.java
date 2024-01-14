@@ -1,21 +1,13 @@
 package info.nahid.seeder;
 
-import info.nahid.entity.Department;
-import info.nahid.entity.Semester;
-import info.nahid.entity.Student;
-import info.nahid.entity.Subject;
-import info.nahid.repository.DepartmentRepository;
-import info.nahid.repository.SemesterRepository;
-import info.nahid.repository.StudentRepository;
-import info.nahid.repository.SubjectRepository;
+import info.nahid.entity.Result;
+import info.nahid.entity.*;
+import info.nahid.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 @Component
@@ -33,12 +25,16 @@ public class DatabaseSeeder {
     @Autowired
     DepartmentRepository departmentRepository;
 
+    @Autowired
+    ResultRepository resultRepository;
+
     @EventListener
     public void seed(ContextRefreshedEvent event) {
         seedDepartment();
         seedStudentData();
         seedSubjectData();
         seedSemestersData();
+        seedStudentResult();
     }
 
     public void seedDepartment() {
@@ -70,6 +66,24 @@ public class DatabaseSeeder {
         subject2.setName("Database Management Systems");
         subject2.setPassingMark(100);
         subjects.add(subject2);
+
+        Subject subject3 = new Subject();
+        subject3.setId(30003L);
+        subject3.setName("Mathematics");
+        subject3.setPassingMark(100);
+        subjects.add(subject3);
+
+        Subject subject4 = new Subject();
+        subject4.setId(30004L);
+        subject4.setName("English");
+        subject4.setPassingMark(100);
+        subjects.add(subject4);
+
+        Subject subject5 = new Subject();
+        subject5.setId(30005L);
+        subject5.setName("Chemistry");
+        subject5.setPassingMark(100);
+        subjects.add(subject5);
         subjectRepository.saveAll(subjects);
     }
 
@@ -99,7 +113,7 @@ public class DatabaseSeeder {
 
         Student student3 = new Student();
         student3.setId(10003L);
-        student3.setName("Md Khaled");
+        student3.setName("Hridoy Ahmed");
         student3.setRollNumber(03);
         student3.setCompletedBachelor(false);
         student3.setGender("Male");
@@ -129,7 +143,34 @@ public class DatabaseSeeder {
         students.add(student2);
         student2.setCompletedBachelor(false);
         studentRepository.saveAll(students);
-
     }
 
+   public void seedStudentResult() {
+        List<Result> results = new ArrayList<>();
+
+        Student student1 = studentRepository.findById(10001L).orElse(null);
+        Subject subject1 = subjectRepository.findById(30001L).orElse(null);
+        Semester semester1 = semesterRepository.findById(40001L).orElse(null);
+        Result result1 = new Result();
+        result1.setId(50001L);
+        result1.setMarks(70);
+        result1.setGrade("A");
+        result1.setGPA(4.55);
+        result1.setStudent(student1);
+        result1.setSubject(subject1);
+        result1.setSemester(semester1);
+        results.add(result1);
+
+        Student student2 = studentRepository.findById(10002L).orElse(null);
+        Result result2 = new Result();
+        result2.setId(50002L);
+        result2.setMarks(88);
+        result2.setGrade("A+");
+        result2.setGPA(5.00);
+        result2.setStudent(student2);
+        result2.setSemester(semester1);
+        result2.setSubject(subject1);
+        results.add(result2);
+        resultRepository.saveAll(results);
+    }
 }
