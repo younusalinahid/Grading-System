@@ -1,17 +1,7 @@
 package info.nahid.dto;
-
-import info.nahid.entity.Semester;
-import info.nahid.entity.Student;
-import info.nahid.entity.Subject;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 
 @Data
 @AllArgsConstructor
