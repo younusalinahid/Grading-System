@@ -10,9 +10,12 @@ public class ResultDTo {
 
     private Long Id;
     private int Marks;
-    private Double GPA;
+    private double GPA;
     private String Grade;
-    private String Semester;
     private String student;
     private String subject;
+    private String Semester;
+    private double semesterCGPA;
+    private String semesterGrad;
+
 }

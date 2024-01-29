@@ -15,8 +15,9 @@ public class Result {
     @Id
     private Long Id;
     private int Marks;
-    private Double GPA;
+    private double GPA;
     private String Grade;
+
 
     @ManyToOne
     @JoinColumn(name = "semester_id")
@@ -29,4 +30,7 @@ public class Result {
     @ManyToOne
     @JoinColumn(name = "subject_id")
     private Subject subject;
+
+    private double semesterCGPA;
+    private String semesterGrad;
 }

@@ -63,9 +63,11 @@ public class StudentService {
         resultDTo.setMarks(result.getMarks());
         resultDTo.setGrade(result.getGrade());
         resultDTo.setGPA(result.getGPA());
-        resultDTo.setSemester(result.getSemester().getName());
         resultDTo.setSubject(result.getSubject().getName());
         resultDTo.setStudent(result.getStudent().getName());
+        resultDTo.setSemester(result.getSemester().getName());
+        resultDTo.setSemesterCGPA(result.getSemesterCGPA());
+        resultDTo.setSemesterGrad(result.getSemesterGrad());
         return resultDTo;
     }
 
