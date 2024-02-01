@@ -10,6 +10,7 @@ import info.nahid.repository.SemesterRepository;
 import info.nahid.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -32,6 +33,25 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    public Student getStudent(Long id) {
+        Optional<Student> student = studentRepository.findById(id);
+        return student.orElse(null);
+    }
+
+    public void addStudent(Student student) {
+        studentRepository.save(student);
+    }
+
+    public void updateStudent(Long id, Student student) {
+        studentRepository.save(student);
+    }
+
+    public void deleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
+
+
+    //for students info;
     public List<StudentInfoDto> getAllStudentsInfo() {
         List<Student> students = studentRepository.findAll();
         return students.stream()
@@ -50,6 +70,7 @@ public class StudentService {
         return dto;
     }
 
+    //for students result;
     public List<ResultDTo> getStudentResults() {
         List<Result> results = resultRepository.findAll();
         return results.stream()

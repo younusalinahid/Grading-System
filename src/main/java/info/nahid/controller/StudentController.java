@@ -5,9 +5,7 @@ import info.nahid.dto.StudentInfoDto;
 import info.nahid.entity.Student;
 import info.nahid.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +19,29 @@ public class StudentController {
     @GetMapping
     public List<Student> getAllStudents() {
         return studentService.getStudentsByDepartmentAndSemester();
+    }
+
+    @GetMapping("/{id}")
+    public Student getStudent(@PathVariable Long id) {
+        return studentService.getStudent(id);
+    }
+
+    @PostMapping("/create")
+    public String addStudent(@RequestBody Student student) {
+         studentService.addStudent(student);
+         return "Student adding successfully";
+    }
+
+    @PutMapping("/{id}")
+    public String updateStudent(@RequestBody Student student, @PathVariable Long id) {
+        studentService.updateStudent(id, student);
+        return "Update student successfully";
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteStudent(@PathVariable Long id) {
+        studentService.deleteStudent(id);
+        return "Delete student successfully";
     }
 
     @GetMapping("/info")

@@ -111,7 +111,7 @@ public class DatabaseSeeder {
         subjects.add(subject9);
 
         Subject subject10 = new Subject();
-        subject10.setId(300010L);
+        subject10.setId(30010L);
         subject10.setName("Machine learning");
         subject10.setPassingMark(100);
         subjects.add(subject10);
