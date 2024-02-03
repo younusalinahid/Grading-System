@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DataJpaTest
 public class StudentRepositoryTest {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     StudentRepository studentRepository;
@@ -21,7 +21,6 @@ public class StudentRepositoryTest {
     @Test
     public void findById_StudentPresent() {
         studentRepository.findById(10001L).ifPresent(student -> assertEquals("Naimul Islam", student.getName()));
-
     }
 
     @Test

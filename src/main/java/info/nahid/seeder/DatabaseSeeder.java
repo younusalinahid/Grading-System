@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,7 +114,6 @@ public class DatabaseSeeder {
         subject10.setName("Machine learning");
         subject10.setPassingMark(100);
         subjects.add(subject10);
-
         subjectRepository.saveAll(subjects);
     }
 
@@ -133,12 +131,14 @@ public class DatabaseSeeder {
 
         Department department1 = departmentRepository.findById(20001L).orElse(null);
         Semester semester1 = semesterRepository.findById(40001L).orElse(null);
+        Semester semester3 = semesterRepository.findById(40003L).orElse(null);
+        Semester semester2 = semesterRepository.findById(40002L).orElse(null);
         Student student1 = new Student();
         student1.setId(10001L);
         student1.setName("Naimul Islam");
         student1.setRollNumber(01);
         student1.setGender("Male");
-        student1.setSemester(semester1);
+        student1.setSemester(semester3);
         student1.setDepartment(department1);
         student1.setCompletedBachelor(true);
         students.add(student1);
@@ -148,10 +148,10 @@ public class DatabaseSeeder {
         student2.setName("Rasedul hok");
         student2.setRollNumber(02);
         student2.setGender("Male");
-        student2.setDepartment(department1);
-        student2.setSemester(semester1);
-        students.add(student2);
         student2.setCompletedBachelor(true);
+        student2.setDepartment(department1);
+        student2.setSemester(semester3);
+        students.add(student2);
 
         Student student3 = new Student();
         student3.setId(10003L);
@@ -159,7 +159,7 @@ public class DatabaseSeeder {
         student3.setRollNumber(03);
         student3.setCompletedBachelor(false);
         student3.setGender("Male");
-        student3.setSemester(semester1);
+        student3.setSemester(semester2);
         student3.setDepartment(department1);
         students.add(student3);
 
@@ -170,7 +170,7 @@ public class DatabaseSeeder {
         student4.setName("Md Khaled");
         student4.setRollNumber(01);
         student4.setCompletedBachelor(true);
-        student4.setSemester(semester1);
+        student4.setSemester(semester3);
         student4.setDepartment(department2);
         student4.setGender("Male");
         students.add(student4);
@@ -180,7 +180,7 @@ public class DatabaseSeeder {
         student5.setName("Md Khaled");
         student5.setRollNumber(02);
         student5.setCompletedBachelor(true);
-        student5.setSemester(semester1);
+        student5.setSemester(semester3);
         student5.setDepartment(department2);
         student5.setGender("Male");
         students.add(student5);

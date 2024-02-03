@@ -8,5 +8,4 @@ class GradingApplicationTest {
     void contextLoads() {
 
     }
-
 }
