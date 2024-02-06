@@ -32,7 +32,7 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Student getStudent(Long id) {
+    public Student getStudentById(Long id) {
         Optional<Student> student = studentRepository.findById(id);
         return student.orElse(null);
     }

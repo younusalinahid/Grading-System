@@ -1,4 +1,5 @@
 package info.nahid.entity;
+import javax.validation.constraints.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -6,6 +7,7 @@ import javax.persistence.Id;
 public class Department {
     @Id
     private Long id;
+    @NotNull(message = "username should not be null")
     private String name;
 
     public Long getId() {

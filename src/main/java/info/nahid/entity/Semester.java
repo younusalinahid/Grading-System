@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -14,5 +15,6 @@ public class Semester {
 
     @Id
     private Long id;
+    @NotNull(message = "username should not be null")
     private String name;
 }

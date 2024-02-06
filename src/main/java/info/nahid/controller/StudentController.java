@@ -22,8 +22,8 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public Student getStudent(@PathVariable Long id) {
-        return studentService.getStudent(id);
+    public Student getStudentById(@PathVariable Long id) {
+        return studentService.getStudentById(id);
     }
 
     @PostMapping("/create")

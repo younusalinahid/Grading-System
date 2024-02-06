@@ -200,7 +200,7 @@ public class DatabaseSeeder {
         result1.setId(50001L);
         result1.setMarks(70);
         result1.setGrade("A");
-        result1.setGPA(4.00);
+        result1.setGPA(3.00);
         result1.setStudent(student1);
         result1.setSubject(subject1);
         result1.setSemester(semester1);
@@ -210,7 +210,7 @@ public class DatabaseSeeder {
         result2.setId(50002L);
         result2.setMarks(80);
         result2.setGrade("A+");
-        result2.setGPA(5.00);
+        result2.setGPA(4.00);
         result2.setStudent(student1);
         result2.setSubject(subject2);
         result2.setSemester(semester1);
@@ -220,7 +220,7 @@ public class DatabaseSeeder {
         result3.setId(50003L);
         result3.setMarks(88);
         result3.setGrade("A+");
-        result3.setGPA(5.00);
+        result3.setGPA(4.00);
         result3.setStudent(student1);
         result3.setSubject(subject3);
         result3.setSemester(semester1);
@@ -238,7 +238,7 @@ public class DatabaseSeeder {
         result4.setId(50004L);
         result4.setMarks(89);
         result4.setGrade("A+");
-        result4.setGPA(5.00);
+        result4.setGPA(4.00);
         result4.setStudent(student2);
         result4.setSemester(semester1);
         result4.setSubject(subject1);
@@ -248,7 +248,7 @@ public class DatabaseSeeder {
         result5.setId(50005L);
         result5.setMarks(88);
         result5.setGrade("A+");
-        result5.setGPA(5.00);
+        result5.setGPA(4.00);
         result5.setStudent(student2);
         result5.setSemester(semester1);
         result5.setSubject(subject2);
@@ -258,7 +258,7 @@ public class DatabaseSeeder {
         result6.setId(50006L);
         result6.setMarks(80);
         result6.setGrade("A+");
-        result6.setGPA(5.00);
+        result6.setGPA(4.00);
         result6.setStudent(student2);
         result6.setSemester(semester1);
         result6.setSubject(subject3);
@@ -285,8 +285,8 @@ public class DatabaseSeeder {
         Result result8 = new Result();
         result8.setId(50008L);
         result8.setMarks(66);
-        result8.setGrade("A-");
-        result8.setGPA(3.50);
+        result8.setGrade("B-");
+        result8.setGPA(3.00);
         result8.setStudent(student3);
         result8.setSemester(semester1);
         result8.setSubject(subject2);
@@ -295,7 +295,7 @@ public class DatabaseSeeder {
         Result result9 = new Result();
         result9.setId(50009L);
         result9.setMarks(75);
-        result9.setGPA(4.00);
+        result9.setGPA(3.25);
         result9.setGrade("A");
         result9.setStudent(student3);
         result9.setSubject(subject3);
@@ -318,7 +318,7 @@ public class DatabaseSeeder {
         result10.setId(50010L);
         result10.setMarks(77);
         result10.setGrade("A");
-        result10.setGPA(4.00);
+        result10.setGPA(3.00);
         result10.setStudent(student1);
         result10.setSubject(subject4);
         result10.setSemester(semester2);
@@ -328,7 +328,7 @@ public class DatabaseSeeder {
         result11.setId(50011L);
         result11.setMarks(85);
         result11.setGrade("A+");
-        result11.setGPA(5.00);
+        result11.setGPA(4.00);
         result11.setStudent(student1);
         result11.setSubject(subject5);
         result11.setSemester(semester2);
@@ -338,7 +338,7 @@ public class DatabaseSeeder {
         result12.setId(50012L);
         result12.setMarks(85);
         result12.setGrade("A+");
-        result12.setGPA(5.00);
+        result12.setGPA(4.00);
         result12.setStudent(student1);
         result12.setSubject(subject6);
         result12.setSemester(semester2);
@@ -355,7 +355,7 @@ public class DatabaseSeeder {
         result13.setId(50013L);
         result13.setMarks(82);
         result13.setGrade("A+");
-        result13.setGPA(5.00);
+        result13.setGPA(4.00);
         result13.setStudent(student2);
         result13.setSubject(subject4);
         result13.setSemester(semester2);
@@ -365,7 +365,7 @@ public class DatabaseSeeder {
         result14.setId(50014L);
         result14.setMarks(89);
         result14.setGrade("A+");
-        result14.setGPA(5.00);
+        result14.setGPA(4.00);
         result14.setStudent(student2);
         result14.setSubject(subject5);
         result14.setSemester(semester2);
@@ -375,7 +375,7 @@ public class DatabaseSeeder {
         result15.setId(50015L);
         result15.setMarks(90);
         result15.setGrade("A+");
-        result15.setGPA(5.00);
+        result15.setGPA(4.00);
         result15.setStudent(student2);
         result15.setSubject(subject6);
         result15.setSemester(semester2);
