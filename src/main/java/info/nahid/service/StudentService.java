@@ -14,7 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class StudentService {
+public class StudentService{
 
     @Autowired
     StudentRepository studentRepository;
@@ -25,8 +25,8 @@ public class StudentService {
     @Autowired
     SemesterRepository semesterRepository;
 
-   @Autowired
-   ResultRepository resultRepository;
+    @Autowired
+    ResultRepository resultRepository;
 
     public List<Student> getStudentsByDepartmentAndSemester() {
         return studentRepository.findAll();
