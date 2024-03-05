@@ -13,29 +13,29 @@ public class SemesterController {
     @Autowired
     SemesterService semesterService;
 
-    @GetMapping("/semester")
+    @GetMapping("/semesters")
     public List<Semester> getAllSemester() {
         return semesterService.getAllSemester();
     }
 
-    @GetMapping("/semester/{id}")
+    @GetMapping("/semesters/{id}")
     public Semester getSemester(@PathVariable Long id) {
         return semesterService.getSemester(id);
     }
 
-    @PostMapping(value = "/semester")
+    @PostMapping(value = "/semesters/create")
     public String addSemester(@RequestBody Semester semester) {
         semesterService.addSemester(semester);
         return "Save semester successfully";
     }
 
-    @PutMapping("/semester/{id}")
+    @PutMapping("/semesters/{id}")
     public String updateSemester(@RequestBody Semester semester, @PathVariable Long id) {
         semesterService.updateSemester(id, semester);
         return "Update semester successfully";
     }
 
-    @DeleteMapping("/semester/{id}")
+    @DeleteMapping("/semesters/{id}")
     public String deleteSemester(@PathVariable Long id) {
         semesterService.deleteSemester(id);
         return "Delete semester successfully";

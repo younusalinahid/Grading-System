@@ -68,7 +68,6 @@ public class StudentServiceTest {
 
     @Test
     public void testUpdateStudent() {
-        // Create a sample student
         Student student = new Student();
         student.setId(10002L);
         student.setName("John Doe");
@@ -81,7 +80,6 @@ public class StudentServiceTest {
     @Test
     public void testDeleteStudent() {
         studentService.deleteStudent(10001L);
-
         verify(studentRepository).deleteById(10001L);
     }
 }

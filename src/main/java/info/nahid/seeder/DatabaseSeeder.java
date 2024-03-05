@@ -31,9 +31,9 @@ public class DatabaseSeeder {
     @EventListener
     public void seed(ContextRefreshedEvent event) {
         seedDepartment();
-        seedStudentData();
         seedSubjectData();
         seedSemestersData();
+        seedStudentData();
         seedStudentResult();
     }
 

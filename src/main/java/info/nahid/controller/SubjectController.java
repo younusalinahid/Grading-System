@@ -13,29 +13,29 @@ public class SubjectController {
     @Autowired
     SubjectService subjectService;
 
-    @GetMapping("/subject")
+    @GetMapping("/subjects")
     public List<Subject> getAllSubject() {
         return subjectService.getAllSubject();
     }
 
-    @GetMapping("/subject/{id}")
+    @GetMapping("/subjects/{id}")
     public Subject getDepartment(@PathVariable Long id) {
         return subjectService.getSubject(id);
     }
 
-    @PostMapping("/subject")
+    @PostMapping("/subjects/create")
     public String addSubject(@RequestBody Subject subject) {
         subjectService.addSubject(subject);
         return "Save subject successfully";
     }
 
-    @PutMapping("/subject/{id}")
+    @PutMapping("/subjects/{id}")
     public String updateSubject(@RequestBody Subject subject, @PathVariable Long id) {
         subjectService.updateSubject(id, subject);
         return "Update subject successfully";
     }
 
-    @DeleteMapping("/subject/{id}")
+    @DeleteMapping("/subjects/{id}")
     public String deleteSubject(@PathVariable Long id) {
         subjectService.deleteSubject(id);
         return "Delete subject successfully";

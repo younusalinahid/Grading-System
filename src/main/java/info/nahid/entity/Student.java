@@ -2,13 +2,12 @@ package info.nahid.entity;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
 @Entity
 public class Student {
     @Id
     private Long id;
 
-    @NotBlank(message = "Name is mandatory")
+    @NotEmpty(message = "Name cannot be empty")
     private String name;
 
     @Min(value = 1, message = "Roll number should be at least 1")
@@ -25,7 +24,7 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "semester_id")
-    @NotNull(message = "Semester is mandatory")
+    @NotEmpty(message = "Name cannot be empty")
     private Semester semester;
     public Student() {
 
