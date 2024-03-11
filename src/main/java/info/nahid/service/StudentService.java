@@ -37,8 +37,8 @@ public class StudentService{
         return student.orElse(null);
     }
 
-    public void addStudent(Student student) {
-        studentRepository.save(student);
+    public Student addStudent(Student student) {
+       return studentRepository.save(student);
     }
 
     public void updateStudent(Long id, Student student) {

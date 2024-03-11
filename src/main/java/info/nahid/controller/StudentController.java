@@ -7,7 +7,6 @@ import info.nahid.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,11 +27,10 @@ public class StudentController {
     public Student getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id);
     }
-
     @PostMapping("/create")
-    public String addStudent(@RequestBody Student student) {
-        studentService.addStudent(student);
-        return "Student adding successfully";
+    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
+        Student student1 = studentService.addStudent(student);
+        return ResponseEntity.ok(student1);
     }
 
     @PutMapping("/{id}")

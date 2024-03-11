@@ -1,8 +1,15 @@
 package info.nahid.entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
     @Id
     private Long id;
@@ -17,6 +24,9 @@ public class Student {
     @NotBlank(message = "Gender is mandatory")
     private String gender;
 
+    @Min(value = 1900, message = "Year must be at least 1900")
+    private int year;
+
     @ManyToOne
     @JoinColumn(name = "department_id")
     @NotNull(message = "Department is mandatory")
@@ -26,68 +36,4 @@ public class Student {
     @JoinColumn(name = "semester_id")
     @NotEmpty(message = "Name cannot be empty")
     private Semester semester;
-    public Student() {
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getRollNumber() {
-        return rollNumber;
-    }
-
-    public void setRollNumber(int rollNumber) {
-        this.rollNumber = rollNumber;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public Semester getSemester() {
-        return semester;
-    }
-
-    public void setSemester(Semester semester) {
-        this.semester = semester;
-    }
-
-    public boolean isCompletedBachelor() {
-        return completedBachelor;
-    }
-
-    public void setCompletedBachelor(boolean completedBachelor) {
-        this.completedBachelor = completedBachelor;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Student[%s %d]",name, rollNumber);
-    }
 }

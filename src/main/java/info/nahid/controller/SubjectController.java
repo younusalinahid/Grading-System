@@ -4,7 +4,6 @@ import info.nahid.entity.Subject;
 import info.nahid.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

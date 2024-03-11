@@ -34,7 +34,7 @@ public class DepartmentControllerTest {
     @Test
     public void testAddDepartment() throws Exception {
         doNothing().when(departmentService).addDepartment(any(Department.class));
-        mockMvc.perform(post("/departments")
+        mockMvc.perform(post("/departments/create")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"id\": 20003}"))
                 .andExpect(status().isOk())
